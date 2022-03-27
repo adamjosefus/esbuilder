@@ -7,17 +7,34 @@ You can found this project on [Deno.land registry](https://deno.land/x/esbuilder
 # Installations
 1. [Install **Deno 🦕**](https://deno.land/#installation)
 2. [Check if your `.deno` folder is in PATH](https://deno.land/manual@v1.19.3/tools/script_installer#script-installer)
-3. Clone this repository
-4. **Install it!**
+3. **Install it!**
 
-## Install in **Visual Studio Code**
-- Open Repository in VS Code
+
+## Install from **Deno** *(Simpliest way)*
+Run the following command:
+```sh
+deno install \
+ --allow-read \
+ --allow-write \
+ --allow-env \
+ --allow-run \
+ --name esbuilder \
+ https://deno.land/x/esbuilder/builder.ts
+```
+
+
+## Install by **VSCode** task runner *(No terminal way)*
+- Clone this repository
+- Open repo in VS Code
 - Open Command Pallete _(`Ctrl + Shift + P` / `⌘ + Shift + P`)_
     - Select → `Tasks: Run Task`
-    - Run → `Install Builder`
+    - **Run → `Install ESBuilder`**
 
 
-## Install in **Terminal**
+## Install in **Terminal**  from Repository
+- Clone this repository
+- Run the following command:
+
 ```sh
 deno install \
  --allow-read \
