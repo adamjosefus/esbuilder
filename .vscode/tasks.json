@@ -24,7 +24,7 @@
             "group": "build",
         },
         {
-            "label": "Install EsBuilder",
+            "label": "Install ESBuilder",
             "command": "deno",
             "args": [
                 "run",
@@ -35,7 +35,7 @@
             "group": "build",
         },
         {
-            "label": "Uninstall EsBuilder",
+            "label": "Uninstall ESBuilder",
             "command": "deno",
             "args": [
                 "uninstall",
@@ -44,7 +44,7 @@
             "group": "build",
         },
         {
-            "label": "Reinstall EsBuilder",
+            "label": "Reinstall ESBuilder",
             "dependsOrder": "sequence",
             "dependsOn":[
                 "Uninstall Builder",
