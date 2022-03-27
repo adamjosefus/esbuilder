@@ -1,0 +1,26 @@
+{
+    "version": "1.0",
+    "sourceDir": "./src",
+    "outDir": "./dist",
+    "files": {
+        "pageA": [
+            "main.ts",
+            "pages/pageA.ts"
+        ],
+        "pageB": [
+            "main.ts",
+            "pages/pageB.ts"
+        ]
+    },
+    "build": {
+        "bundle": true,
+        "minify": true,
+        "sourcemap": true
+    },
+    "options": {
+        "verbose": true,
+        "watch": true,
+        "gitignore": true,
+        "outputSummary": true
+    }
+}

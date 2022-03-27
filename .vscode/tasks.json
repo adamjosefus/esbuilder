@@ -1,0 +1,72 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Bundle to Single Javascript File",
+            "command": "deno",
+            "args": [
+                "run",
+                "--allow-read",
+                "--allow-run",
+                "./bin/bundle.ts"
+            ],
+            "group": "build",
+        },
+        {
+            "label": "Compile to Native Executable File",
+            "command": "deno",
+            "args": [
+                "run",
+                "--allow-read",
+                "--allow-run",
+                "./bin/compile.ts"
+            ],
+            "group": "build",
+        },
+        {
+            "label": "Install EsBuilder",
+            "command": "deno",
+            "args": [
+                "run",
+                "--allow-read",
+                "--allow-run",
+                "./bin/install.ts"
+            ],
+            "group": "build",
+        },
+        {
+            "label": "Uninstall EsBuilder",
+            "command": "deno",
+            "args": [
+                "uninstall",
+                "esbuilder",
+            ],
+            "group": "build",
+        },
+        {
+            "label": "Reinstall EsBuilder",
+            "dependsOrder": "sequence",
+            "dependsOn":[
+                "Uninstall Builder",
+                "Install Builder"
+            ],
+            "group": "build",
+        },
+        {
+            "label": "Run Demo",
+            "options": {
+                "cwd": "./demo"
+            },
+            "command": "deno",
+            "args": [
+                "run",
+                "--allow-read",
+                "--allow-write",
+                "--allow-env",
+                "--allow-run",
+                "../builder.ts",
+                "--c=./config.json",
+            ]
+        },
+    ]
+}
