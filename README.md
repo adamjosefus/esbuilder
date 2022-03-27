@@ -1,6 +1,8 @@
-# EsBuilder
+# ESBuilder
 
 Simple and easy to use solution for building your modules to native ES syntax.
+
+You can found this project on [Deno.land registry](https://deno.land/x/esbuilder).
 
 # Installations
 1. [Install **Deno 🦕**](https://deno.land/#installation)
