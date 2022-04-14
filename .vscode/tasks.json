@@ -65,8 +65,11 @@
                 "--allow-env",
                 "--allow-run",
                 "../builder.ts",
-                "--c=./config.json",
+                "--c=./config.json"
+            ],
+            "problemMatcher": [
+                "$deno"
             ]
-        },
+        }
     ]
 }
