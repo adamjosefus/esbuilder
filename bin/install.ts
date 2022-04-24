@@ -23,6 +23,8 @@ const cmd = [
     '--allow-write',
     '--allow-env',
     '--allow-run',
+    '--allow-net',
+    '--no-prompt',
     '--name',
     `${packageName}`,
     `${builderFile}`
