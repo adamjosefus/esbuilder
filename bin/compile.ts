@@ -27,6 +27,12 @@ const outputFile = relative(Deno.cwd(), normalize(join(root, outputName)));
 const cmd = [
     `deno`,
     `compile`,
+    '--allow-read',
+    '--allow-write',
+    '--allow-env',
+    '--allow-run',
+    '--allow-net',
+    '--no-prompt',
     `--output=${outputFile}`,
     `${builderFile}`
 ];
