@@ -84,7 +84,10 @@ function getArguments() {
 
 async function watchConfigFile(path: string, manager: BuilderManager) {
     const watcher = Deno.watchFs(path);
-    Deno.addSignalListener("SIGINT", () => watcher.close());
+    
+    if (Deno.build.os !== "windows") {
+        Deno.addSignalListener("SIGINT", () => watcher.close());
+    }
 
     let timeouter: number | null = null;
 

@@ -282,10 +282,12 @@ export class BuilderCore {
         if (!this.#config.options.watch) {
             this.stop();
         } else {
-            Deno.addSignalListener('SIGINT', () => {
-                this.#programInterruptToggle = true;
-                this.stop();
-            });
+            if (Deno.build.os !== "windows") {
+                Deno.addSignalListener('SIGINT', () => {
+                    this.#programInterruptToggle = true;
+                    this.stop();
+                });
+            }
         }
     }
 
