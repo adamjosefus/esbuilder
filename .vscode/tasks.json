@@ -10,7 +10,7 @@
                 "--allow-run",
                 "./bin/bundle.ts"
             ],
-            "group": "build",
+            "group": "build"
         },
         {
             "label": "Compile to Native Executable File",
@@ -21,7 +21,7 @@
                 "--allow-run",
                 "./bin/compile.ts"
             ],
-            "group": "build",
+            "group": "build"
         },
         {
             "label": "Install ESBuilder",
@@ -32,28 +32,28 @@
                 "--allow-run",
                 "./bin/install.ts"
             ],
-            "group": "build",
+            "group": "build"
         },
         {
             "label": "Uninstall ESBuilder",
             "command": "deno",
             "args": [
                 "uninstall",
-                "esbuilder",
+                "esbuilder"
             ],
-            "group": "build",
+            "group": "build"
         },
         {
             "label": "Reinstall ESBuilder",
             "dependsOrder": "sequence",
             "dependsOn":[
-                "Uninstall Builder",
-                "Install Builder"
+                "Uninstall ESBuilder",
+                "Install ESBuilder"
             ],
             "group": "build",
         },
         {
-            "label": "Run Demo",
+            "label": "🏖 — Run Demo",
             "options": {
                 "cwd": "./demo"
             },
@@ -64,9 +64,12 @@
                 "--allow-write",
                 "--allow-env",
                 "--allow-run",
+                "--allow-net",
+                "--no-prompt",
                 "../builder.ts",
-                "--c=./config.json",
-            ]
-        },
+                "--c=./config.json"
+            ],
+            "group": "build"
+        }
     ]
 }

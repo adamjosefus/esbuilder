@@ -3,8 +3,8 @@
  */
 
 
-import { join, dirname, fromFileUrl, normalize, relative } from 'https://deno.land/std@0.132.0/path/mod.ts';
-import { gray, bold } from "https://deno.land/std@0.132.0/fmt/colors.ts";
+import { join, dirname, fromFileUrl, normalize, relative } from 'https://deno.land/std@0.136.0/path/mod.ts';
+import { gray, bold } from "https://deno.land/std@0.136.0/fmt/colors.ts";
 
 
 const __dirname = dirname(fromFileUrl(import.meta.url));
@@ -27,6 +27,12 @@ const outputFile = relative(Deno.cwd(), normalize(join(root, outputName)));
 const cmd = [
     `deno`,
     `compile`,
+    '--allow-read',
+    '--allow-write',
+    '--allow-env',
+    '--allow-run',
+    '--allow-net',
+    '--no-prompt',
     `--output=${outputFile}`,
     `${builderFile}`
 ];

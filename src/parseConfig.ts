@@ -2,7 +2,7 @@
  * @author Adam Josefus
  */
 
-import { join } from "https://deno.land/std@0.132.0/path/mod.ts";
+import { join } from "https://deno.land/std@0.136.0/path/mod.ts";
 import { ValueException } from "https://deno.land/x/allo_arguments@v5.0.2/mod.ts";
 import { makeAbsolute } from "./makeAbsolute.ts";
 import { currentVersion, lastSupportedVersion, renderVerion } from "./version.ts";

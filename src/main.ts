@@ -2,7 +2,7 @@
  * @author Adam Josefus
  */
 
-import { join, isAbsolute, dirname } from "https://deno.land/std@0.132.0/path/mod.ts";
+import { join, isAbsolute, dirname } from "https://deno.land/std@0.136.0/path/mod.ts";
 import { Arguments, HelpInterruption, ValueException } from "https://deno.land/x/allo_arguments@v5.0.2/mod.ts";
 import { BuilderManager } from "./BuilderManager.ts";
 import { makeAbsolute } from "./makeAbsolute.ts";
@@ -84,7 +84,10 @@ function getArguments() {
 
 async function watchConfigFile(path: string, manager: BuilderManager) {
     const watcher = Deno.watchFs(path);
-    Deno.addSignalListener("SIGINT", () => watcher.close());
+    
+    if (Deno.build.os !== "windows") {
+        Deno.addSignalListener("SIGINT", () => watcher.close());
+    }
 
     let timeouter: number | null = null;
 
