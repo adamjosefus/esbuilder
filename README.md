@@ -34,13 +34,15 @@ deno install \
 ## Install in **Terminal**  from Repository
 - Clone this repository
 - Run the following command:
-
+- 
 ```sh
 deno install \
  --allow-read \
  --allow-write \
  --allow-env \
  --allow-run \
+ --allow-net \
+ --no-prompt \
  --name esbuilder \
  ./builder.ts
 ```
