@@ -2,8 +2,8 @@
  * @author Adam Josefus
  */
 
-import { join, dirname, fromFileUrl, normalize, relative } from 'https://deno.land/std@0.136.0/path/mod.ts';
-import { gray, bold } from 'https://deno.land/std@0.136.0/fmt/colors.ts';
+import { join, dirname, fromFileUrl, normalize, relative } from 'https://deno.land/std@0.140.0/path/mod.ts';
+import { gray, bold } from 'https://deno.land/std@0.140.0/fmt/colors.ts';
 
 
 const __dirname = dirname(fromFileUrl(import.meta.url));

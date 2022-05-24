@@ -2,10 +2,10 @@
  * @author Adam Josefus
  */
 
-import { join } from "https://deno.land/std@0.136.0/path/mod.ts";
-import * as esbuild from 'https://deno.land/x/esbuild@v0.14.27/mod.js';
+import { join } from "./libs/path.ts";
+import { esbuild } from './libs/esbuild.ts';
+import { brightRed as red, yellow, green, gray } from './libs/colors.ts';
 import { type ConfigType } from "./parseConfig.ts";
-import { brightRed as red, yellow, green, gray } from 'https://deno.land/std@0.136.0/fmt/colors.ts';
 import * as print from "./stylePrint.ts";
 import { pipe } from "./pipe.ts";
 

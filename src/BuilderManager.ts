@@ -2,7 +2,7 @@
  * @author Adam Josefus
  */
 
-import { ValueException } from "https://deno.land/x/allo_arguments@v5.0.2/mod.ts";
+import { ValueException } from "./libs/allo_arguments.ts";
 import { BuilderCore } from "./BuilderCore.ts";
 import { exists } from "./exists.ts";
 import { makeAbsolute } from "./makeAbsolute.ts";

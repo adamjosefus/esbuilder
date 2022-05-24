@@ -2,8 +2,8 @@
  * @author Adam Josefus
  */
 
-import { join, isAbsolute, dirname } from "https://deno.land/std@0.136.0/path/mod.ts";
-import { Arguments, HelpInterruption, ValueException } from "https://deno.land/x/allo_arguments@v5.0.2/mod.ts";
+import { join, isAbsolute, dirname } from "./libs/path.ts";
+import { Arguments, InfoInterruption, ExpectedException } from "./libs/allo_arguments.ts";
 import { BuilderManager } from "./BuilderManager.ts";
 import { makeAbsolute } from "./makeAbsolute.ts";
 import { renderVerion, currentVersion } from "./version.ts";
@@ -11,19 +11,19 @@ import { renderVerion, currentVersion } from "./version.ts";
 
 function getArguments() {
     const configConvertor = (v: string | null): string => {
-        if (v === null) throw new ValueException(`Path to config file is not set.`);
+        if (v === null) throw new ExpectedException(`Path to config file is not set.`);
 
         const path = isAbsolute(v) ? v : join(Deno.cwd(), v);
 
         try {
             const info = Deno.statSync(path);
-            if (!info.isFile) throw new ValueException(`${path} is not a file`);
+            if (!info.isFile) throw new ExpectedException(`${path} is not a file`);
 
             return path;
 
         } catch (err) {
             if (!Arguments.isPrintableException(err)) {
-                throw new ValueException(`Path "${v}" is not exists.`);
+                throw new ExpectedException(`Path "${v}" is not exists.`);
             } else {
                 throw err;
             }
@@ -65,7 +65,7 @@ function getArguments() {
     const version = args.get<boolean>('version');
 
     if (version) {
-        throw new HelpInterruption([
+        throw new InfoInterruption([
             `Version: ${renderVerion(currentVersion)}`,
             `Deno: ${Deno.version.deno}`,
             `TypeScript: ${Deno.version.typescript}`,
