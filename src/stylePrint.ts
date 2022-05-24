@@ -2,7 +2,7 @@
  * @author Adam Josefus
  */
 
-import { bold, italic, gray } from 'https://deno.land/std@0.136.0/fmt/colors.ts';
+import { bold, italic, gray } from './libs/colors.ts';
 
 
 export function text(template: TemplateStringsArray, ...masks: unknown[]) {
